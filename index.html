@@ -6,33 +6,54 @@
     <body>
         <h1>Enter your independent fields</h1>
 
-        <table style="width:10%">
+        <table>
             <tr>
               <th>Firstname</th>
               <th>Lastname</th>
               <th>Age</th>
             </tr>
             <tr>
-              <td>Jill</td>
-              <td>Smith</td>
-              <td>50</td>
+              <td><input type="text" id="firstName1" name="name" size="20"></td>
+              <td><input type="text" id="lastName1" name="name" size="20"></td>
+              <td><input type="text" id="age1" name="name" size="10"></td>
             </tr>
             <tr>
-              <td>Eve</td>
-              <td>Jackson</td>
-              <td>94</td>
+              <td><input type="text" id="firstName2" name="name" size="20"></td>
+              <td><input type="text" id="lastName2" name="name" size="20"></td>
+              <td><input type="text" id="age2" name="name" size="10"></td>
             </tr>
-          </table>
-
-        <input type="text" id="name" name="name" size="20">
+        </table>
+          
+          
         <button id="submitButton">Submit</button>
+        <table id="table2">
+
+        </table>
+        
+        
 
         <script>
             let clicker = document.getElementById("submitButton");
+            let table = document.getElementById("table2");
+            let onButtonClick = function(){
+                let row1 = table2.insertRow(0);
+                let fn1 = row1.insertCell(0);
+                let ln1 = row1.insertCell(1);
+                let a1 = row1.insertCell(2);
+                fn1.innerHTML = document.getElementById("firstName1").value;
+                ln1.innerHTML = document.getElementById("lastName1").value;
+                a1.innerHTML = document.getElementById("age1").value;
 
-            var onButtonClick = function(){
-                clickerButton
+                let row2 = table2.insertRow(1);
+                let fn2 = row2.insertCell(0);
+                let ln2 = row2.insertCell(1);
+                let a2 = row2.insertCell(2);
+                fn2.innerHTML = document.getElementById("firstName2").value;
+                ln2.innerHTML = document.getElementById("lastName2").value;
+                a2.innerHTML = document.getElementById("age2").value;
             }
+
+            clicker.addEventListener("click", onButtonClick);
         </script>
     </body>
 
